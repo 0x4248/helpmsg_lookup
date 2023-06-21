@@ -16,6 +16,6 @@ async function add_command(command, description, example) {
     let contents = document.getElementById("contents");
     let link = document.createElement("a");
     link.setAttribute("href", `#${command}`);
-    link.innerHTML = "<li>" +command + "<br>";
+    link.innerHTML = "<li>" + command + "<br>";
     contents.appendChild(link);
 }
