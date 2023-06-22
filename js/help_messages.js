@@ -219,3 +219,85 @@ GNU coreutils online help: <https://www.gnu.org/software/coreutils/><br>
 Report any translation bugs to <https://translationproject.org/team/><br>
 Full documentation <https://www.gnu.org/software/coreutils/mv><br>
 or available locally via: info '(coreutils) mv invocation'<br>`);
+
+add_command("cp", "Copy files and directories", `Usage: cp [OPTION]... [-T] SOURCE DEST<br>
+  or:  cp [OPTION]... SOURCE... DIRECTORY<br>
+  or:  cp [OPTION]... -t DIRECTORY SOURCE...<br>
+Copy SOURCE to DEST, or multiple SOURCE(s) to DIRECTORY.<br>
+<br>
+Mandatory arguments to long options are mandatory for short options too.<br>
+  -a, --archive                same as -dR --preserve=all<br>
+      --attributes-only        don't copy the file data, just the attributes<br>
+      --backup[=CONTROL]       make a backup of each existing destination file<br>
+  -b                           like --backup but does not accept an argument<br>
+      --copy-contents          copy contents of special files when recursive<br>
+  -d                           same as --no-dereference --preserve=links<br>
+  -f, --force                  if an existing destination file cannot be<br>
+                                 opened, remove it and try again (this option<br>
+                                 is ignored when the -n option is also used)<br>
+  -i, --interactive            prompt before overwrite (overrides a previous -n<br>
+                                  option)<br>
+  -H                           follow command-line symbolic links in SOURCE<br>
+  -l, --link                   hard link files instead of copying<br>
+  -L, --dereference            always follow symbolic links in SOURCE<br>
+  -n, --no-clobber             do not overwrite an existing file (overrides<br>
+                                 a previous -i option)<br>
+  -P, --no-dereference         never follow symbolic links in SOURCE<br>
+  -p                           same as --preserve=mode,ownership,timestamps<br>
+      --preserve[=ATTR_LIST]   preserve the specified attributes (default:<br>
+                                 mode,ownership,timestamps), if possible<br>
+                                 additional attributes: context, links, xattr,<br>
+                                 all<br>
+      --no-preserve=ATTR_LIST  don't preserve the specified attributes<br>
+      --parents                use full source file name under DIRECTORY<br>
+  -R, -r, --recursive          copy directories recursively<br>
+      --reflink[=WHEN]         control clone/CoW copies. See below<br>
+      --remove-destination     remove each existing destination file before<br>
+                                 attempting to open it (contrast with --force)<br>
+      --sparse=WHEN            control creation of sparse files. See below<br>
+      --strip-trailing-slashes  remove any trailing slashes from each SOURCE<br>
+                                 argument<br>
+  -s, --symbolic-link          make symbolic links instead of copying<br>
+  -S, --suffix=SUFFIX          override the usual backup suffix<br>
+  -t, --target-directory=DIRECTORY  copy all SOURCE arguments into DIRECTORY<br>
+  -T, --no-target-directory    treat DEST as a normal file<br>
+  -u, --update                 copy only when the SOURCE file is newer<br>
+                                 than the destination file or when the<br>
+                                 destination file is missing<br>
+  -v, --verbose                explain what is being done<br>
+  -x, --one-file-system        stay on this file system<br>
+  -Z                           set SELinux security context of destination<br>
+                                 file to default type<br>
+      --context[=CTX]          like -Z, or if CTX is specified then set the<br>
+                                 SELinux or SMACK security context to CTX<br>
+      --help     display this help and exit<br>
+      --version  output version information and exit<br>
+<br>
+By default, sparse SOURCE files are detected by a crude heuristic and the<br>
+corresponding DEST file is made sparse as well.  That is the behavior<br>
+selected by --sparse=auto.  Specify --sparse=always to create a sparse DEST<br>
+file whenever the SOURCE file contains a long enough sequence of zero bytes.<br>
+Use --sparse=never to inhibit creation of sparse files.<br>
+<br>
+When --reflink[=always] is specified, perform a lightweight copy, where the<br>
+data blocks are copied only when modified.  If this is not possible the copy<br>
+fails, or if --reflink=auto is specified, fall back to a standard copy.<br>
+Use --reflink=never to ensure a standard copy is performed.<br>
+<br>
+The backup suffix is '~', unless set with --suffix or SIMPLE_BACKUP_SUFFIX.<br>
+The version control method may be selected via the --backup option or through<br>
+the VERSION_CONTROL environment variable.  Here are the values:<br>
+<br>
+  none, off       never make backups (even if --backup is given)<br>
+  numbered, t     make numbered backups<br>
+  existing, nil   numbered if numbered backups exist, simple otherwise<br>
+  simple, never   always make simple backups<br>
+<br>
+As a special case, cp makes a backup of SOURCE when the force and backup<br>
+options are given and SOURCE and DEST are the same name for an existing,<br>
+regular file.<br>
+<br>
+GNU coreutils online help: <https://www.gnu.org/software/coreutils/><br>
+Report any translation bugs to <https://translationproject.org/team/><br>
+Full documentation <https://www.gnu.org/software/coreutils/cp><br>
+or available locally via: info '(coreutils) cp invocation'<br>`);
