@@ -3,9 +3,9 @@
     "description": "A website that allows users to search for help messages from the command line.",
     "version": "",
     "main_file": "index.html",
-    "author": "Lewis Evans",
+    "author": "0x4248",
     "license": "GNU General Public License v3.0",
-    "url": "https://www.github.com/lewisevans2007/helpmsg_lookup",
+    "url": "https://www.github.com/0x4248/helpmsg_lookup",
     "email": "none",
     "languages": [
         "html",
